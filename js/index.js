@@ -84,7 +84,6 @@ var app = {
     	    }
     	});
     	$("#download_pdf").on('click', function(){
-    		alert("here");
     		var url = app.file_link; 
     		var downloadUrl = app.file_link;
     		var relativeFilePath = "secure-file/file.pdf";  // using an absolute path also does not work
