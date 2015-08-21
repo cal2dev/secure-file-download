@@ -83,43 +83,8 @@ var app = {
     	    }
     	});
     	$("#download_pdf").on('click', function(){
-    		
-    		
-    		
-    		//alert(app.file_link);
+    		alert("here");
     		var url = app.file_link; 
-    		 /* window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-    		      var imagePath = fs.root.fullPath + "/dummy.pdf"; // full file path
-    		      var fileTransfer = new FileTransfer();
-    		      fileTransfer.download(url, imagePath, function (entry) {
-    		               alert(entry.fullPath); // entry is fileEntry object
-    		      }, function (error) {
-    		               alert(error);
-    		      });
-    		   })	*/
-    		   
-    		/*var fileTransfer = new FileTransfer();
-    		var uri = encodeURI(app.file_link);
-    		var fileURL="MyDir/test.pdf";
-    		fileTransfer.download(
-    		    uri,
-    		    fileURL,
-    		    function(entry) {
-    		        console.log("download complete: " + entry.toURL());
-    		    },
-    		    function(error) {
-    		        alert("download error source " + error.source);
-    		        alert("download error target " + error.target);
-    		        alert("upload error code" + error.code);
-    		    },
-    		    false,
-    		    {
-    		        headers: {
-    		            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-    		        }
-    		    }
-    		);
-    		   */
     		var downloadUrl = app.file_link;
     		var relativeFilePath = "secure-file/file.pdf";  // using an absolute path also does not work
 
@@ -128,7 +93,6 @@ var app = {
     		   var fileTransfer = new FileTransfer();
     		   fileTransfer.download(
     		      downloadUrl,
-
     		      // The correct path!
     		      fileSystem.root.toURL() + '/' + relativeFilePath,
 
