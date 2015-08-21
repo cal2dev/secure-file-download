@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;  connect-src 'self' http://23.21.71.132"" >
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://23.21.71.132">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+       
+        <link href="jquery-mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"/>
+         <link rel="stylesheet" type="text/css" href="css/index.css">
+         
+		<script src="jquery-mobile/jquery.js" type="text/javascript"></script>
+		<script src="jquery-mobile/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+		
+        <title>Secure File Download</title>
+    </head>
+    <body>
+        
+       <div data-role="page" data-theme='b'>
+			<div data-role="header" class="blink">
+				 <h1>Secure File Download</h1>
+			</div>
+			<div data-role="main" class="ui-content">
+				 <div id="deviceready" >
+				 
+             		  <div id="load_content" ></div>
+             		  <div id="status" class="blink"></div>
+             		  
+           			 <div data-role="content" id="login_form_content">	
+						<form id="login_form" method="POST">
+							<input type="text" name="uname" id="uname" placeholder="username" >
+							<input type="password" name="pword" id="pword" placeholder="Password"  autocomplete="off">
+							<input type="submit" id="login_button" value="Log Me In">
+						</form>
+					</div>
+           			 <div data-role="content" id="file_content" style="display:none">	
+						<button id="download_pdf">Download Pdf</button>
+						<button id="logout">Log Out</button>
+					</div>
+					
+           		 </div>
+
+			</div>
+			<div data-role="footer">
+				<h1>knsetek.com</h1>
+			</div>
+		</div>
+
+
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
