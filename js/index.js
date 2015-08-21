@@ -124,6 +124,7 @@ var app = {
     		var relativeFilePath = "secure-file/file.pdf";  // using an absolute path also does not work
 
     		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+    			app.set_status('Requesting to download File');
     		   var fileTransfer = new FileTransfer();
     		   fileTransfer.download(
     		      downloadUrl,
@@ -133,9 +134,11 @@ var app = {
 
     		      function (entry) {
     		         alert("File Downloaded Succesfully- "+fileSystem.root.toURL() + '/' + relativeFilePath);
+    		         app.set_status('File Downloaded');
     		      },
     		      function (error) {
     		    	  alert("Error during download. Code = " + error.code);
+    		    	  app.set_status('Error in file Downloadng');
     		      }
     		   );
     		});
