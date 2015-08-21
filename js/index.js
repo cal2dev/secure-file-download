@@ -63,6 +63,7 @@ var app = {
 					app.show_donload(1);
 				}
 			}
+			app.set_status('Please Login');
 		}else{
 			app.set_status('Please Login');
 			app.show_login(1);
@@ -88,7 +89,7 @@ var app = {
     		var downloadUrl = app.file_link;
     		var relativeFilePath = "secure-file/file.pdf";  // using an absolute path also does not work
 
-    		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+    		/*window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
     			app.set_status('Requesting to download File');
     		   var fileTransfer = new FileTransfer();
     		   fileTransfer.download(
@@ -105,7 +106,7 @@ var app = {
     		    	  app.set_status('Error in file Downloadng');
     		      }
     		   );
-    		});
+    		});*/
     		   
     		});
     	$("#logout").on('click', function(){
