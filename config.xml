@@ -10,6 +10,7 @@
     </author>
 	<gap:plugin name="com.chanthu.evri.gcs-file-transfer" version="1.0.0" />
     <content src="index.html" />
+	<icon src="icon.png" />
     <plugin name="cordova-plugin-whitelist" version="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
