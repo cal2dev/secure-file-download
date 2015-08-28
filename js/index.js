@@ -86,10 +86,22 @@ var app = {
     	$("#download_pdf").on('click', function(){
     		var url = app.file_link; 
     		var downloadUrl = app.file_link;
-    		var relativeFilePath = "Documents/secure-file/file.pdf";  // using an absolute path also does not work
+    		var relativeFilePath = "secure-file/file.pdf";  // using an absolute path also does not work
 
     		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
     			app.set_status('Requesting to download File');
+    			var devicePlatform = device.platform;
+
+    			if(devicePlatform=='Android') {   alert("android");
+    				file_path =fileSystem.root.toURL() + '/' + relativeFilePath ;
+				        //4 Android
+				    } else {
+				    	alert('ios');
+						 var wwwPath = window.location.pathname;alert(wwwPath);
+						 var basePath = 'file://'+ wwwPath.substring(0,wwwPath.length-10);alert(basePath);
+						 file_path =basePath+'/' + relativeFilePath;
+				    }
+    			
     			
     		   var fileTransfer = new FileTransfer();
     		   fileTransfer.download(
@@ -107,14 +119,7 @@ var app = {
     		      }
     		   );
     		});
-
-
-    		// ------------------
-    		
-    		// --------------------
-    		
-    		
-    		
+    		   
     		});
     	$("#logout").on('click', function(){
     		 window.localStorage.removeItem("uname");
@@ -219,7 +224,7 @@ var app = {
 	    		$("#login_form_content").css("display", "block");
 	    	}else{
 	    		$("#login_form_content").css("display", "none");
-	    		$("#login_form").trigger('reset');
+	    	//	$("#login_form").trigger('reset');
 	    	}
     },
     show_donload: function(tab) {
