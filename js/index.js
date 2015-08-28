@@ -86,10 +86,11 @@ var app = {
     	$("#download_pdf").on('click', function(){
     		var url = app.file_link; 
     		var downloadUrl = app.file_link;
-    		var relativeFilePath = "secure-file/file.pdf";  // using an absolute path also does not work
+    		var relativeFilePath = "Documents/secure-file/file.pdf";  // using an absolute path also does not work
 
     		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
     			app.set_status('Requesting to download File');
+    			
     		   var fileTransfer = new FileTransfer();
     		   fileTransfer.download(
     		      downloadUrl,
@@ -106,7 +107,14 @@ var app = {
     		      }
     		   );
     		});
-    		   
+
+
+    		// ------------------
+    		
+    		// --------------------
+    		
+    		
+    		
     		});
     	$("#logout").on('click', function(){
     		 window.localStorage.removeItem("uname");

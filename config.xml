@@ -8,7 +8,7 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
-    <preference name="iosPersistentFileLocation" value="Documents" />
+    
 	<gap:plugin name="com.chanthu.evri.gcs-file-transfer" version="1.0.0" />
     <content src="index.html" />
 	<icon src="icon.png" />
