@@ -98,8 +98,7 @@ var app = {
     		      fileSystem.root.toURL() + '/' + relativeFilePath,
 
     		      function (entry) {
-    		         alert("File Downloaded Succesfully at - "+fileSystem.root.toURL() + '/' + relativeFilePath);
-    		         showLink(fileSystem.root.toURL() + '/' + relativeFilePath);  
+    		         alert("File Downloaded Succesfully- "+fileSystem.root.toURL() + '/' + relativeFilePath);
     		         app.set_status('File Downloaded');
     		      },
     		      function (error) {
@@ -109,17 +108,6 @@ var app = {
     		   );
     		});
     		   
-    		function showLink(url){  
-    		       //alert(url);  
-    		       var divEl = document.getElementById("file_content");  
-    		       var aElem = document.createElement('a');
-    		       aElem.setAttribute('target', '_blank');
-    		       aElem.setAttribute('href', url);
-    		       aElem.setAttribute('text',"ooga");
-    		       aElem.appendChild(document.createTextNode('Ready! Click To Open.'))
-    		       $(aElem).insertAfter(divEl); 
-    		     } 
-    		
     		});
     	$("#logout").on('click', function(){
     		 window.localStorage.removeItem("uname");
